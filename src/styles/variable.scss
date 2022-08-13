@@ -1,0 +1,21 @@
+:root {
+  --main: #5986F2;
+  --danger: #FE7474;
+
+  --expense: #FF9A9A;
+  --income: #9AB8FF;
+  --expense-gradient: linear-gradient(180deg, #FE7474 -34%, #FE7474 -34%, rgba(254, 116, 116, 0.00) 100%, rgba(254, 116, 116, 0.00) 100%);
+  --income-gradient: linear-gradient(180deg, #5986F2 -34%, #5986F2 -34%, rgba(89, 134, 242, 0.00) 100%, rgba(89, 134, 242, 0.00) 100%);
+
+  --primary: #404040;
+  --secondary: #A6A6A6;
+  --gray: #D9D9D9;
+  --background: #F5F5F5;
+  --white: #FCFCFC;
+
+  --primary-dark: #EAEAEA;
+  --secondary-dark: #BABABF;
+  --gray-dark: #898A93;
+  --background-dark: #595968;
+  --white-dark: #28293D;
+}
