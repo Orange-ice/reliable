@@ -2,11 +2,10 @@
 import {defineComponent} from 'vue';
 
 export default defineComponent({
+  name: 'Welcome',
   setup() {
     return () => (
-        <>
-          <router-view />
-        </>
+        <div>welcome</div>
     );
   }
 });
