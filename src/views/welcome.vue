@@ -1,25 +1,61 @@
 <script lang="tsx">
-import {defineComponent} from 'vue';
+import {defineComponent, ref} from 'vue';
 
 export default defineComponent({
   name: 'Welcome',
   setup() {
+    const contentList = [
+      {
+        title: 'Easy to add new transaction',
+        content: 'We always try to bring the best experience to users. Your transactions are recorded as quickly as possible. You will not have any difficulties when you first use MoNo.',
+        img: 'welcome1'
+      },
+      {
+        title: 'Track income and expenses',
+        content: 'details tracking transactions visually with the adding images features bills',
+        img: 'welcome2'
+      },
+      {
+        title: 'Comprehensive Report',
+        content: 'Supports viewing your balance for monthly, income and expenses, debts, loans as well as reports with category.',
+        img: 'welcome3'
+      }
+    ];
+
+    const refStep = ref(0);
+    const nextStep = () => {
+      if (refStep.value < contentList.length - 1) {
+        refStep.value++;
+      } else {
+        // go start
+      }
+    };
+    const skip = () => {
+      // go start
+    };
     return () => (
+
         <div class="welcome">
           <div class="top">
-            <span>1/3</span>
-            <button>skip</button>
+            <span>{refStep.value + 1}/{contentList.length}</span>
+            {refStep.value !== contentList.length - 1 && <button onClick={skip}>skip</button>}
           </div>
-          <div class="image">
-            <img src="../../src/assets/images/welcome1.png" alt="" />
+          <div class="transform-wrapper">
+            {contentList.map(item => <div class="transform-item"
+                                          style={{transform: `translateX(-${refStep.value}00%)`}}>
+              <div class="image">
+                <img src={`../../src/assets/images/${item.img}.png`} alt="" />
+              </div>
+              <div class="description">
+                <h3>{item.title}</h3>
+                <p>{item.content}</p>
+              </div>
+            </div>)}
           </div>
-          <div class="description">
-            <h3>Easy to add new transaction</h3>
-            <p>We always try to bring the best experience to users. Your transactions are recorded as quickly as
-              possible. You will not have any difficulties when you first use MoNo.</p>
-          </div>
+
+
           <div class="action">
-            <button>继续</button>
+            <button onClick={nextStep}>{refStep.value === contentList.length - 1 ? 'Get Started' : 'Continue'}</button>
           </div>
         </div>
     );
@@ -28,6 +64,17 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.transform-wrapper {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  .transform-item {
+    width: 100%;
+    flex-shrink: 0;
+    transition: transform .5s;
+  }
+}
+
 .welcome {
   height: 100%;
   padding: 20px 16px;
@@ -38,6 +85,7 @@ export default defineComponent({
     align-items: center;
     font-size: 16px;
     color: var(--primary);
+    min-height: 40px;
     > button {
       height: 40px;
       padding: 8px 24px;
@@ -70,6 +118,7 @@ export default defineComponent({
       color: var(--secondary);
       font-size: 16px;
       line-height: 24px;
+      min-height: 96px;
     }
   }
   .action {
