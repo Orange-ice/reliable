@@ -1,5 +1,6 @@
 <script lang="tsx">
 import {defineComponent, ref} from 'vue';
+import {useRouter} from 'vue-router';
 
 export default defineComponent({
   name: 'Welcome',
@@ -23,15 +24,16 @@ export default defineComponent({
     ];
 
     const refStep = ref(0);
+    const router = useRouter();
     const nextStep = () => {
       if (refStep.value < contentList.length - 1) {
         refStep.value++;
       } else {
-        // go start
+        router.push('/bills/list');
       }
     };
     const skip = () => {
-      // go start
+      router.push('/bills/list');
     };
     return () => (
 
