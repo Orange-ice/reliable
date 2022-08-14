@@ -8,9 +8,9 @@ export default defineComponent({
   setup() {
     const navList = [
       {title: '账单', icon: 'bills', path: '/bills/list'},
-      {title: '记账', icon: 'input', path: 'todo'},
-      {title: '统计', icon: 'report', path: 'todo'},
-      {title: '设置', icon: 'settings', path: 'todo'}
+      {title: '记账', icon: 'input', path: '/bills/create'},
+      {title: '统计', icon: 'report', path: '/bills/report'},
+      {title: '设置', icon: 'settings', path: '/bills/settings'}
     ];
     return () => (
         <div>
@@ -52,7 +52,7 @@ export default defineComponent({
       width: 24px;
       height: 24px;
     }
-    
+
     &.router-link-active {
       color: var(--main);
     }

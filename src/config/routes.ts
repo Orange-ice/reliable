@@ -10,6 +10,9 @@ export const routes: RouteRecordRaw[] = [
     redirect: '/bills/list',
     children: [
       {path: 'list', component: () => import('../views/bills/index.vue')},
+      {path: 'create', component: () => import('../views/bills/create.vue')},
+      {path: 'report', component: () => import('../views/bills/report.vue')},
+      {path: 'settings', component: () => import('../views/bills/settings.vue')},
     ]
-  }
+  },
 ];
