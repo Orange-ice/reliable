@@ -10,10 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "svgo": "2.8.0",
+    "svgstore": "3.0.1",
     "vue": "3.2.37",
     "vue-router": "4"
   },
   "devDependencies": {
+    "@types/node": "18.7.3",
     "@vitejs/plugin-vue": "3.0.3",
     "@vitejs/plugin-vue-jsx": "2.0.0",
     "sass": "1.54.4",

@@ -1,5 +1,6 @@
 <script lang="tsx">
 import {defineComponent} from 'vue';
+import Icon from './Icon.vue';
 
 export default defineComponent({
   name: 'Layout',
@@ -7,7 +8,10 @@ export default defineComponent({
     return () => (
         <div>
           <router-view />
-          <footer class="nav">footer</footer>
+          <footer class="nav">
+            footer
+            <Icon name="bills" />
+          </footer>
         </div>
     );
   }
